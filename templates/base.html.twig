@@ -17,6 +17,53 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+            <!-- ***** Preloader Start ***** -->
+            <div id="js-preloader" class="js-preloader">
+                <div class="preloader-inner">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                </div>
+            </div>
+            <!-- ***** Preloader End ***** -->
+
+            <!-- ***** Header Area Start ***** -->
+            <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+                <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{{ path('app_home') }}" class="logo">
+                        <h4>Pan<span>thera</span></h4>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="{{ app.request.attributes.get('_route') =="app_home" ?'active' : ''}}">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#about' : path('app_home')~'#about'}}">About Us</a></li>
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#services' :  path('app_home')~'#services'}}">Services</a></li>
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#portfolio' :  path('app_home')~'#portfolio'}}">Portfolio</a></li>
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home"  ? '#blog' :  path('app_home')~'#blog'}}">Blog</a></li> 
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#contact' :  path('app_home')~'#contact'}}">Message Us</a></li> 
+                        <li class="scroll-to-section"><a href="{{ path('app_login')}}">Sign in</a></li> 
+                        <li class="scroll-to-section"><a href="{{ path('app_user_new')}}">Sign up</a></li> 
+
+                        <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contact Now</a></div></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                    </div>
+                </div>
+                </div>
+            </header>
+            <!-- ***** Header Area End ***** -->
+            {% block body %}{% endblock %}
     </body>
 </html>
