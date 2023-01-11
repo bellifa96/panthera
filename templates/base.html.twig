@@ -43,11 +43,11 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="{{ app.request.attributes.get('_route') =="app_home" ?'active' : ''}}">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#top' : path('app_home')~'#top'}}" class="{{ app.request.attributes.get('_route') =="app_home" ?'active' : ''}}">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#about' : path('app_home')~'#about'}}">About Us</a></li>
                         <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#services' :  path('app_home')~'#services'}}">Services</a></li>
                         <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#portfolio' :  path('app_home')~'#portfolio'}}">Portfolio</a></li>
-                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home"  ? '#blog' :  path('app_home')~'#blog'}}">Blog</a></li> 
+                        <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#blog' :  path('app_home')~'#blog'}}">Blog</a></li> 
                         <li class="scroll-to-section"><a href="{{ app.request.attributes.get('_route') =="app_home" ?'#contact' :  path('app_home')~'#contact'}}">Message Us</a></li> 
                         {% if app.user is not empty %}
                             <li><a href="{{ path('app_user_show',{'id':app.user.id})}}">Mon profil</a></li> 
